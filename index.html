@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <!-- Made by Simon Fredriksson, simon@lan2k.org -->
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" href="weights.png" />
+  <!--<link rel="apple-touch-startup-image" href="/startup.png" />-->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="author" content="Simon Fredriksson" />
+
+  <title>Kalorikalkylatorn</title>
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />        
+  <link rel="stylesheet" type="text/css" href="my.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <script type="text/javascript" src="my.js"></script>
+  <script type="text/javascript" src="bmr.js"></script>
+ </head>
+
+ <body>
+  <!-- Home -->
+  <div data-role="page" id="page1">
+   <div data-theme="b" data-role="header">
+    <h3>Kaloriintag</h3>
+   </div>
+   
+   <div data-role="content">
+    <form action="#" name="frm" onsubmit="return false;" method="get">
+     <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+       <legend>Kön</legend>
+        <input id="female" name="gender" value="f" type="radio" checked="checked" />
+        <label for="female">Kvinna</label>
+        <input id="male" name="gender" value="m" type="radio" />
+        <label for="male">Man</label>
+      </fieldset>
+     </div>
+      
+     <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+       <label for="age">Ålder</label>
+       <input id="age" readonly="readonly" type="range" name="age" value="30" min="16" max="80" data-highlight="false" class="slider" />
+      </fieldset>
+     </div>
+      
+     <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+       <label for="height">Längd</label>
+       <input id="height" readonly="readonly" type="range" name="height" value="170" min="150" max="215" data-highlight="false" class="slider" />
+      </fieldset>
+     </div>
+      
+     <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+       <label for="weight">Vikt</label>
+       <input id="weight" readonly="readonly" type="range" name="weight" value="70" min="50" max="200" data-highlight="false" class="slider" />
+      </fieldset>
+     </div>
+      
+     <div data-role="fieldcontain">
+      <label for="training">Tränar</label>
+      <select name="training" id="training" data-mini="true">
+       <option value="seldom" checked="checked">Sällan</option>
+       <option value="1to3">1-3 gånger per vecka</option>
+       <option value="3to5">3-5 gånger per vecka</option>
+       <option value="6to7">6-7 gånger per vecka</option>
+       <option value="twice">2 gånger per dag</option>
+      </select>
+     </div>
+
+     <div id="calculateBMR" style="padding: 15px;">                                                      
+      <h3>Ditt dagliga kaloriintag:</h3>
+      <h4 style="text-align: center;"><span id="kcal">???</span> kcal</h4>
+     </div>
+     
+     <div>
+      <hr />
+      <p>
+       <small>
+        Intaget är beräknat enligt Roza/Shizgals revision av
+        <a href="http://en.wikipedia.org/wiki/Harris-Benedict_equation">Harris/Benedict-ekvationen</a>.
+       </small> 
+      </p>
+     </div>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>
